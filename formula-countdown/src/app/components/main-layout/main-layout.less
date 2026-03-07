@@ -1,0 +1,91 @@
+:host {
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-image: linear-gradient(160deg, #0a0a0a, #370000);
+
+  .main-layout {
+    max-width: clamp(300px, 80vw, 800px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 48px, 56px);
+
+    &__header {
+      color: #ffffff;
+      font-size: clamp(32px, 5vw, 42px);
+      line-height: 1.2;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    &__logo {
+      width: clamp(160px, 60vw, 300px);
+    }
+
+    &__link {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      .link {
+        &__action {
+          text-align: center;
+          font-size: 1.2rem;
+          background-color: rgb(26, 26, 26);
+          border: 1px solid rgb(42, 42, 42);
+          border-radius: 12px;
+          padding: 24px 32px;
+          color: rgb(175, 175, 175);
+          user-select: none;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background-color: rgb(33, 33, 33);
+          }
+
+          .url__wrapper {
+            overflow-wrap: anywhere;
+            word-break: break-all;
+            display: -webkit-box;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &__url {
+          flex: 1 1 100%;
+
+          .url {
+            &__attribute {
+              color: rgb(136, 136, 136);
+            }
+
+            &__width {
+              color: rgb(255, 107, 107);
+            }
+
+            &__height {
+              color: rgb(255, 165, 0);
+            }
+          }
+        }
+
+        &__button {
+          flex: 1 1 auto;
+
+          svg {
+            width: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
