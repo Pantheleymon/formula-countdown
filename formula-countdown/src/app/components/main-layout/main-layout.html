@@ -23,17 +23,17 @@
   <div class="main-layout__link">
     <div class="link__action link__url" (click)="copyLink()">
       <span class="url__wrapper">
-        @if (linkBaseUrl) {
-          <span>{{ linkBaseUrl }}</span>
+        @if (state.linkBaseUrl()) {
+          <span>{{ state.linkBaseUrl() }}</span>
         }
-        @if (deviceWidth) {
+        @if (state.deviceWidth()) {
           <span class="url__attribute"
-            >?width=<span class="url__width">{{ deviceWidth }}</span></span
+            >?width=<span class="url__width">{{ state.deviceWidth() }}</span></span
           >
         }
-        @if (deviceHeight) {
+        @if (state.deviceHeight()) {
           <span class="url__attribute"
-            >?height=<span class="url__height">{{ deviceHeight }}</span></span
+            >?height=<span class="url__height">{{ state.deviceHeight() }}</span></span
           >
         }
       </span>
