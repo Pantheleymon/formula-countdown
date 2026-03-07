@@ -20,7 +20,7 @@
       </clipPath>
     </defs>
   </svg>
-  <div class="main-layout__link">
+  <div class="main-layout__link" (click)="copyLink()">
     <div class="link__action link__url">
       <span class="url__wrapper">
         @if (linkBaseUrl) {
@@ -38,7 +38,7 @@
         }
       </span>
     </div>
-    <div class="link__action link__button">
+    <div class="link__action link__button" (click)="copyLink()">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
         <path
           fill="currentColor"
