@@ -20,8 +20,8 @@
       </clipPath>
     </defs>
   </svg>
-  <div class="main-layout__link" (click)="copyLink()">
-    <div class="link__action link__url">
+  <div class="main-layout__link">
+    <div class="link__action link__url" (click)="copyLink()">
       <span class="url__wrapper">
         @if (linkBaseUrl) {
           <span>{{ linkBaseUrl }}</span>
