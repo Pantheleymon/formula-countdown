@@ -4,10 +4,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MainLayoutService, MainLayoutState } from '../main-layout/main-layout.service';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-bottom-sheet',
-  imports: [MatSlideToggleModule, MatButtonModule, FormsModule],
+  imports: [MatSlideToggleModule, MatButtonModule, MatIconModule, FormsModule],
   templateUrl: './bottom-sheet.html',
   styleUrl: './bottom-sheet.less',
 })
