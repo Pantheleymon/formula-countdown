@@ -12,6 +12,11 @@ export class MainLayoutService {
   public linkBaseUrl = signal('');
   public deviceHeight = signal(null);
   public deviceWidth = signal(null);
+  public showMap = signal(true);
+  public showPractise = signal(true);
+  public showQualification = signal(true);
+  public showRace = signal(true);
+  public showCountDown = signal(true);
 
   private _snackBar = inject(MatSnackBar);
   private _bottomSheet = inject(MatBottomSheet);

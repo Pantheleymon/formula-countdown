@@ -3,3 +3,62 @@
     background-color: rgb(10, 10, 10);
   }
 }
+
+:host {
+  .bottom-sheet {
+    &__container {
+      color: #ffffff;
+      padding: 18px;
+    }
+
+    &__header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__close {
+      cursor: pointer;
+      padding: 8px 16px;
+      background-color: transparent;
+      border: 2px solid #ffffff;
+      border-radius: 12px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #ffffff;
+        color: rgb(10, 10, 10);
+      }
+
+      svg {
+        height: 1.5rem;
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      ::ng-deep {
+        .mat-mdc-slide-toggle .mat-internal-form-field {
+          gap: 1rem !important;
+          color: #ffffff !important;
+          font-size: 1rem !important;
+        }
+
+        .mdc-switch__track::after {
+          background-color: rgb(10, 10, 10) !important;
+          border-color: #ffffff !important;
+        }
+      }
+    }
+  }
+}
