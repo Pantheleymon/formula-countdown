@@ -23,17 +23,13 @@
   <div class="main-layout__link">
     <div class="link__action link__url" (click)="copyLink()">
       <span class="url__wrapper">
-        @if (state.linkBaseUrl()) {
-          <span>{{ state.linkBaseUrl() }}</span>
-        }
-        @if (state.deviceWidth()) {
-          <span class="url__attribute"
-            >?width=<span class="url__width">{{ state.deviceWidth() }}</span></span
-          >
-        }
-        @if (state.deviceHeight()) {
-          <span class="url__attribute"
-            >?height=<span class="url__height">{{ state.deviceHeight() }}</span></span
+        @for (item of stateAsObjectEntries; track item[0]; let index = $index) {
+          <span class="url__attribute">
+            @if (index > 0) {
+              <span>{{ index === 1 ? '?' : '&' }}</span>
+              <span>{{ item[0] }}=</span>
+            }
+            <span class="url__{{ item[0] }}">{{ item[1] }}</span></span
           >
         }
       </span>

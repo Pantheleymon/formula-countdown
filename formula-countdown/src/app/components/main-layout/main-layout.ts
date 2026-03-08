@@ -9,7 +9,11 @@ import { MainLayoutService } from './main-layout.service';
   styleUrl: './main-layout.less',
 })
 export class MainLayout implements OnInit {
-  public state = inject(MainLayoutService);
+  public state = inject(MainLayoutService).state;
+
+  public get stateAsObjectEntries() {
+    return Object.entries(this.state());
+  }
 
   constructor(private mainLayoutService: MainLayoutService) {}
 
