@@ -41,7 +41,7 @@ export class MainLayoutService {
   public init() {
     this.state.update((prev) => ({
       ...prev,
-      linkBaseUrl: window.location.origin,
+      linkBaseUrl: 'https://formula-countdown-backend.vercel.app',
       width: window.screen.width,
       height: window.screen.height,
     }));
