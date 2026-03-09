@@ -15,6 +15,9 @@
       (toggleChange)="toggleChange('showPractise')"
       >Показывать практики</mat-slide-toggle
     >
+    <mat-slide-toggle [(ngModel)]="state().showSprint" (toggleChange)="toggleChange('showSprint')"
+      >Показывать спринт</mat-slide-toggle
+    >
     <mat-slide-toggle
       [(ngModel)]="state().showQualification"
       (toggleChange)="toggleChange('showQualification')"

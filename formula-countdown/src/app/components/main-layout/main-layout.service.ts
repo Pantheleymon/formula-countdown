@@ -11,6 +11,7 @@ export interface MainLayoutState {
   width: any;
   showMap: boolean;
   showPractise: boolean;
+  showSprint: boolean;
   showQualification: boolean;
   showRace: boolean;
   showCountDown: boolean;
@@ -26,6 +27,7 @@ export class MainLayoutService {
     width: null,
     showMap: true,
     showPractise: true,
+    showSprint: true,
     showQualification: true,
     showRace: true,
     showCountDown: true,
