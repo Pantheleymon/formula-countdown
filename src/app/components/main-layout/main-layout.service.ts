@@ -5,6 +5,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet';
 
+/**
+ * Интерфейс параметров ссылки
+ */
 export interface MainLayoutState {
   linkBaseUrl: string;
   height: any;
@@ -21,6 +24,9 @@ export interface MainLayoutState {
   providedIn: 'root',
 })
 export class MainLayoutService {
+  /**
+   * Состояние приложения, содержащее параметры ссылки и настройки отображения
+   */
   public state = signal<MainLayoutState>({
     linkBaseUrl: '',
     height: null,
@@ -33,11 +39,21 @@ export class MainLayoutService {
     showCountDown: true,
   });
 
+  /**
+   * Всплывающее снизу уведомление
+   */
   private _snackBar = inject(MatSnackBar);
+
+  /**
+   * Всплывающее окно снизу для настройки параметров отображения
+   */
   private _bottomSheet = inject(MatBottomSheet);
 
   constructor(private clipboard: Clipboard) {}
 
+  /**
+   * Инициализация состояния приложения, установка базового URL и размеров экрана
+   */
   public init() {
     this.state.update((prev) => ({
       ...prev,
@@ -47,7 +63,11 @@ export class MainLayoutService {
     }));
   }
 
+  /**
+   * Копирование ссылки с параметрами в буфер обмена и отображение уведомления об успешном копировании
+   */
   public copyLink() {
+    // Проходим по всем параметрам и формируем URL для копирования
     const url = Object.entries(this.state())
       .map((item, index) => {
         if (item[0] === 'linkBaseUrl') {
@@ -59,9 +79,14 @@ export class MainLayoutService {
       })
       .join('');
     this.clipboard.copy(url);
+
+    // Показываем уведомление об успешном копировании
     this._snackBar.openFromComponent(SnackBarComponent, { duration: 2000 });
   }
 
+  /**
+   * Открытие нижнего окна для настройки параметров отображения
+   */
   public openBottomSheet(): void {
     this._bottomSheet.open(BottomSheetComponent, {
       height: '60vh',

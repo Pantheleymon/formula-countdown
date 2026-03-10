@@ -16,6 +16,10 @@ export class BottomSheetComponent {
   public state = inject(MainLayoutService).state;
   private _bottomSheetRef = inject<MatBottomSheetRef<BottomSheetComponent>>(MatBottomSheetRef);
 
+  /**
+   * Переключение отображения различных элементов интерфейса в зависимости от ключа, переданного в функцию
+   * @param key
+   */
   public toggleChange(key: keyof MainLayoutState): void {
     this.state.update((prev) => ({
       ...prev,
@@ -23,6 +27,10 @@ export class BottomSheetComponent {
     }));
   }
 
+  /**
+   * Закрытие окна настройки
+   * @param event
+   */
   public closeSheet(event: MouseEvent): void {
     this._bottomSheetRef.dismiss();
     event.preventDefault();

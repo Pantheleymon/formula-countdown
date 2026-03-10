@@ -1,5 +1,8 @@
 <main class="main-layout">
+  <!-- Заголовок -->
   <h1 class="main-layout__header">Обои с календарем Формулы 1 на iPhone</h1>
+
+  <!-- Иконка Формулы 1 -->
   <svg
     viewBox="0 0 1600 400"
     fill="none"
@@ -20,10 +23,14 @@
       </clipPath>
     </defs>
   </svg>
+
+  <!-- Блок управления -->
   <div class="main-layout__link">
+    <!-- Ссылка для вставки -->
     <div class="link__action link__url" (click)="copyLink()">
       <span class="url__wrapper">
         @for (item of stateAsObjectEntries; track item[0]; let index = $index) {
+          <!-- Параметры ссылки -->
           <span class="url__attribute">
             @if (index > 0) {
               <span>{{ index === 1 ? '?' : '&' }}</span>
@@ -34,9 +41,12 @@
         }
       </span>
     </div>
+    <!-- Кнопка скопировать -->
     <div class="link__action link__button" (click)="copyLink()">
       <mat-icon aria-hidden="false" aria-label="copy" fontIcon="content_copy"></mat-icon>
     </div>
+
+    <!-- Кнопка настройки -->
     <div class="link__action link__button" (click)="openBottomSheet()">
       <mat-icon aria-hidden="false" aria-label="settings" fontIcon="tune"></mat-icon>
     </div>

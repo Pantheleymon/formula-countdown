@@ -1,31 +1,46 @@
 <div class="bottom-sheet__container">
   <div class="bottom-sheet__header">
+    <!-- Заголовок окна настроек -->
     <h2 class="bottom-sheet__title">Настройки</h2>
+
+    <!-- Кнопка закрытия окна настроек -->
     <button class="bottom-sheet__close" (click)="closeSheet($event)">
       <mat-icon aria-hidden="false" aria-label="settings" fontIcon="close"></mat-icon>
     </button>
   </div>
 
+  <!-- Переключатели для отображения различных элементов -->
   <div class="bottom-sheet__form">
+    <!-- Переключатель для отображения карты трассы -->
     <mat-slide-toggle [(ngModel)]="state().showMap" (toggleChange)="toggleChange('showMap')"
       >Показывать карту</mat-slide-toggle
     >
+
+    <!-- Переключатель для отображения практик -->
     <mat-slide-toggle
       [(ngModel)]="state().showPractise"
       (toggleChange)="toggleChange('showPractise')"
       >Показывать практики</mat-slide-toggle
     >
+
+    <!-- Переключатель для отображения спринта -->
     <mat-slide-toggle [(ngModel)]="state().showSprint" (toggleChange)="toggleChange('showSprint')"
       >Показывать спринт</mat-slide-toggle
     >
+
+    <!-- Переключатель для отображения квалификации -->
     <mat-slide-toggle
       [(ngModel)]="state().showQualification"
       (toggleChange)="toggleChange('showQualification')"
       >Показывать квалификацию</mat-slide-toggle
     >
+
+    <!-- Переключатель для отображения гонки -->
     <mat-slide-toggle [(ngModel)]="state().showRace" (toggleChange)="toggleChange('showRace')"
       >Показывать гонку</mat-slide-toggle
     >
+
+    <!-- Переключатель для отображения обратного отсчета до события -->
     <mat-slide-toggle
       [(ngModel)]="state().showCountDown"
       (toggleChange)="toggleChange('showCountDown')"
